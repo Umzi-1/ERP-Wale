@@ -37,3 +37,20 @@ Use a custom port (for hosted previews):
 ```bash
 PORT=4173 npm start
 ```
+
+## If GitHub shows merge conflicts on this PR
+
+Use command-line conflict resolution and keep this branch's resolved Phase-1 files:
+
+```bash
+git fetch origin
+git checkout <your-pr-branch>
+git merge origin/main
+bash scripts/resolve_pr_conflicts.sh
+node --check app.js && node --check server.js
+git commit -m "Resolve merge conflicts in app.js/index.html/styles.css/README.md"
+git push
+```
+
+If conflicts still remain, open the files listed by `git status`, remove conflict markers manually (`<<<<<<<`, `=======`, `>>>>>>>`), then add/commit/push.
+
