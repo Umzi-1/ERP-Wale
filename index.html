@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERP Matchmaker | Learn, Assess, Compare, and Find Partners</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="container nav">
+        <h1>ERP Matchmaker</h1>
+        <div class="nav-links">
+          <a href="#assessment">Assessment</a>
+          <a href="#compare">Compare</a>
+          <a href="#partners">Partners</a>
+        </div>
+      </nav>
+      <section class="container hero-content">
+        <p class="eyebrow">Neutral ERP intelligence for every business.</p>
+        <h2>Learn ERP, diagnose fit, compare options, and connect with vetted implementers.</h2>
+        <p>
+          A vendor-agnostic marketplace to help startups, SMBs, and enterprises shortlist the right
+          ERP and generate implementation-ready RFPs.
+        </p>
+        <a class="btn" href="#assessment">Start Readiness Assessment</a>
+      </section>
+    </header>
+
+    <main class="container">
+      <section class="section" id="education">
+        <h3>ERP 101 & Vendor Discovery</h3>
+        <p class="muted">Phase 1 learning hub with core vendor explainers.</p>
+        <div id="vendor-cards" class="grid cards"></div>
+      </section>
+
+      <section class="section" id="assessment">
+        <h3>ERP Readiness Assessment (Lead Magnet)</h3>
+        <p class="muted">Complete this 2–6 minute diagnostic to unlock your tailored report.</p>
+        <form id="assessment-form" class="card form-grid">
+          <label>Full name<input name="name" required /></label>
+          <label>Work email<input type="email" name="email" required /></label>
+          <label>Company name<input name="company" required /></label>
+          <label>Employees
+            <select name="employees" required>
+              <option value="">Select</option>
+              <option value="10-50">10-50</option>
+              <option value="51-200">51-200</option>
+              <option value="201-1000">201-1000</option>
+              <option value="1000+">1000+</option>
+            </select>
+          </label>
+          <label>Annual ERP budget (USD)
+            <select name="budget" required>
+              <option value="">Select</option>
+              <option value="low">Under 50k</option>
+              <option value="mid">50k-250k</option>
+              <option value="high">250k+</option>
+            </select>
+          </label>
+          <label>Current systems maturity
+            <select name="maturity" required>
+              <option value="">Select</option>
+              <option value="basic">Spreadsheets / disconnected tools</option>
+              <option value="intermediate">Mixed systems with partial integration</option>
+              <option value="advanced">Integrated systems with complex needs</option>
+            </select>
+          </label>
+          <label>Primary priority
+            <select name="priority" required>
+              <option value="">Select</option>
+              <option value="cost">Cost & speed</option>
+              <option value="control">Governance & compliance</option>
+              <option value="scale">Scale & multi-entity growth</option>
+            </select>
+          </label>
+          <label>Core modules needed
+            <select name="module" required>
+              <option value="">Select</option>
+              <option value="finance">Finance</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="projects">Projects/Services</option>
+              <option value="hr">HR</option>
+            </select>
+          </label>
+          <button class="btn" type="submit">Generate Readiness Report</button>
+        </form>
+        <div id="assessment-results" class="results"></div>
+      </section>
+
+      <section class="section" id="calculators">
+        <h3>TCO + ROI Quick Calculators</h3>
+        <form id="calc-form" class="card form-grid">
+          <label>Users<input type="number" name="users" min="5" required /></label>
+          <label>Current yearly ops cost (USD)<input type="number" name="currentCost" min="0" required /></label>
+          <label>Expected automation savings %<input type="number" name="savingsPercent" min="1" max="80" required /></label>
+          <label>Implementation cost estimate (USD)<input type="number" name="implCost" min="0" required /></label>
+          <button class="btn" type="submit">Calculate TCO & ROI</button>
+        </form>
+        <div id="calc-results" class="results"></div>
+      </section>
+
+      <section class="section" id="compare">
+        <h3>Feature Parity Matrix (Top Modules)</h3>
+        <div class="table-wrap card">
+          <table>
+            <thead>
+              <tr>
+                <th>Vendor</th>
+                <th>Finance</th>
+                <th>SCM</th>
+                <th>Manufacturing</th>
+                <th>HR</th>
+                <th>CRM</th>
+                <th>Analytics</th>
+              </tr>
+            </thead>
+            <tbody id="feature-matrix-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="partners">
+        <h3>Implementation Partner Directory</h3>
+        <p class="muted">Browse profiles and request contact from aligned specialists.</p>
+        <div id="partner-list" class="grid cards"></div>
+      </section>
+
+      <section class="section" id="rfp">
+        <h3>Instant RFP Generator</h3>
+        <p>Create a downloadable RFP from your assessment and shortlist.</p>
+        <form id="rfp-form" class="card form-grid">
+          <label>Project scope summary<textarea name="scope" rows="3" required></textarea></label>
+          <label>Preferred vendors (comma-separated)<input name="vendors" placeholder="Odoo, Microsoft, SAP" required /></label>
+          <label>Timeline<input name="timeline" placeholder="Go-live in 6 months" required /></label>
+          <button class="btn" type="submit">Download RFP Draft</button>
+        </form>
+      </section>
+
+      <section class="section" id="partner-dashboard">
+        <h3>Partner Onboarding & Lead Delivery (Phase 1)</h3>
+        <div class="grid two-col">
+          <form id="partner-onboard-form" class="card form-grid">
+            <h4>Partner Onboarding</h4>
+            <label>Partner company<input name="partnerCompany" required /></label>
+            <label>OEM alignment<input name="partnerOem" required placeholder="SAP, Oracle, Odoo" /></label>
+            <label>Primary region<input name="partnerRegion" required /></label>
+            <button class="btn" type="submit">Register Partner</button>
+          </form>
+          <article class="card">
+            <h4>Lead Delivery Console</h4>
+            <p class="muted">Latest readiness leads captured on this instance.</p>
+            <ul id="lead-console" class="list"></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">ERP Matchmaker • Educate • Diagnose • Compare • Match</footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
