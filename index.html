@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERP Navigator | Compare & Select the Right ERP</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav>
+        <h1>ERP Navigator</h1>
+        <a class="cta-link" href="#finder">Find My ERP</a>
+      </nav>
+      <div class="hero-content container">
+        <p class="eyebrow">One platform for every business, every industry, every region.</p>
+        <h2>Understand, Compare, and Select the Right ERP — with confidence.</h2>
+        <p>
+          Explore leading ERP solutions from Oracle, SAP, Microsoft Dynamics, Odoo, and more.
+          Learn the fundamentals, get a personalized shortlist, and connect with reliable
+          implementation partners for smooth rollout and post-go-live support.
+        </p>
+        <a class="btn" href="#finder">Start ERP Fit Assessment</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="container section" id="why-erp">
+        <h3>Why businesses adopt ERP</h3>
+        <div class="grid three">
+          <article class="card">
+            <h4>Unified Operations</h4>
+            <p>Connect finance, sales, operations, inventory, and HR in one workflow.</p>
+          </article>
+          <article class="card">
+            <h4>Data-Driven Growth</h4>
+            <p>Real-time reporting for better decisions from startup to enterprise scale.</p>
+          </article>
+          <article class="card">
+            <h4>Implementation Success</h4>
+            <p>Choose technology and delivery partners that fit your budget, timeline, and goals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="comparison">
+        <h3>Leading ERP platforms at a glance</h3>
+        <p class="muted">A simplified snapshot to start your evaluation.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>OEM</th>
+                <th>Best fit</th>
+                <th>Strengths</th>
+                <th>Typical complexity</th>
+              </tr>
+            </thead>
+            <tbody id="erp-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="container section" id="finder">
+        <h3>ERP Fit Assessment</h3>
+        <p class="muted">Answer 4 quick questions and get a recommended shortlist.</p>
+        <form id="assessment-form" class="card form-card">
+          <label>
+            Company size
+            <select name="size" required>
+              <option value="">Select</option>
+              <option value="startup">Startup (1-50)</option>
+              <option value="mid">Growing/Mid-market (51-500)</option>
+              <option value="enterprise">Enterprise (500+)</option>
+            </select>
+          </label>
+
+          <label>
+            ERP budget (annualized)
+            <select name="budget" required>
+              <option value="">Select</option>
+              <option value="low">Under $50k</option>
+              <option value="medium">$50k - $250k</option>
+              <option value="high">$250k+</option>
+            </select>
+          </label>
+
+          <label>
+            Implementation urgency
+            <select name="timeline" required>
+              <option value="">Select</option>
+              <option value="fast">Need value in 3-6 months</option>
+              <option value="normal">6-12 months is okay</option>
+              <option value="long">Long transformation program</option>
+            </select>
+          </label>
+
+          <label>
+            Primary priority
+            <select name="priority" required>
+              <option value="">Select</option>
+              <option value="cost">Affordability and speed</option>
+              <option value="scale">Advanced scale and controls</option>
+              <option value="flexibility">Customization and flexibility</option>
+            </select>
+          </label>
+
+          <button class="btn" type="submit">Get My ERP Shortlist</button>
+        </form>
+
+        <div id="results" class="results" aria-live="polite"></div>
+      </section>
+
+      <section class="container section" id="partner">
+        <h3>Need a reliable implementation partner?</h3>
+        <p>
+          Tell us your goals and we’ll match you with authorized implementation partners best
+          suited to your OEM shortlist, geography, and rollout needs.
+        </p>
+        <form class="card form-card" id="lead-form">
+          <label>
+            Work email
+            <input type="email" required placeholder="name@company.com" />
+          </label>
+          <label>
+            Country/Region
+            <input type="text" required placeholder="e.g., India, UAE, USA" />
+          </label>
+          <label>
+            Preferred OEM
+            <input type="text" placeholder="e.g., SAP, Odoo, Microsoft" />
+          </label>
+          <label>
+            Project brief
+            <textarea rows="4" required placeholder="Current systems, timeline, priorities"></textarea>
+          </label>
+          <button class="btn" type="submit">Request Partner Match</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <p>ERP Navigator • Educate • Compare • Select • Implement</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
